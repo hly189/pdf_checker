@@ -1,3 +1,10 @@
+#############################################################
+# 
+# Author: Hoa Ly
+# Last Update: 12/21/2015
+# Description: The core file of pdf checker 
+# 
+#############################################################
 import util
 import mechanize 
 import urlparse

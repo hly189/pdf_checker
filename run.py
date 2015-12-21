@@ -1,3 +1,11 @@
+#############################################################
+# 
+# Author: Hoa Ly
+# Last Update: 12/21/2015
+# Description: run and download all the .pdf files
+# Note: it will be different depends on the way we setup server
+# 
+#############################################################
 import checking
 import util 
 

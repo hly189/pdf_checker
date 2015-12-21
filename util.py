@@ -1,4 +1,10 @@
-
+#############################################################
+# 
+# Author: Hoa Ly
+# Last Update: 12/21/2015
+# Description: implementation of needed utilities for checking.py
+# 
+#############################################################
 import urllib2
 
 
