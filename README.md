@@ -2,11 +2,18 @@ PDF CHECKER:
 
 This program will search all the links which contain the .pdf files in the provided url and download all of them for you. 
 
-In this version, the default mode is to download all the .pdf files which are found. In the near future, it will ask for the permission to see which file that you want to download. 
-
 You should run "run.py" file to start the program
 
 The defaul url that I used is "https://math.berkeley.edu/~jcalder/". You can use another one that you like 
+
+VERSION 1.0: 
+  the default mode is to download all the .pdf files which are found. 
+  
+UPDATE VERSION 1.0.1: 
+  Update options for run: 
+    "-v": Show the current version of pdf_checker
+    "-a": allow you to download all the .pdf files which contain in the provided link
+    "-s": allow you to download selected .pdf file. It will ask to see which .pdf file that you want to download
 
 P/S: I am in the process of fixing the bugs and updating the program. Therefore, it is probably not perfect. 
 
