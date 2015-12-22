@@ -26,7 +26,7 @@ def get_options():
 	                  )
 	parser.add_option('--version',
 	                  dest="version",
-	                  default=1.0,
+	                  default=1.0.1,
 	                  type="float",
 	                  ) 
 	parser.add_option('-v', '--verbose',
