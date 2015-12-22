@@ -87,7 +87,7 @@ def download_pdf(link_pdf):
 				pass
 		current = current.get_next()
 	if i == 0: print "File not found"
-
+"""
 url = "http://persson.berkeley.edu/"
 
 urls = util.SList()
@@ -98,3 +98,4 @@ visited.insertFont(url)
 pdf = gather_pdf(get_link_info(url, urls, visited))
 #pdf.show_pdf()
 download_pdf(pdf)
+"""
