@@ -2,7 +2,7 @@
 # 
 # Author: Hoa Ly
 # Last Update: 12/22/2015
-# Description: updating options and some major changes 
+# Description: updating show .pdf option
 # 
 #############################################################
 import checking
@@ -22,6 +22,11 @@ def get_options():
 	parser.add_option('-a', '--all',
 					  action="store_true",
 	                  dest="download_all",
+	                  default=False
+	                  )
+	parser.add_option('--show',
+					  action="store_true",
+	                  dest="show_pdf",
 	                  default=False
 	                  )
 	parser.add_option('--version',
@@ -47,11 +52,15 @@ def main():
 	visited = util.SList()
 	visited.insertFont(url)
 
+
 	if options.verbose: 
 		print 'VERSION   :', options.version
 	else: 
 		pdf = checking.gather_pdf(checking.get_link_info(url, urls, visited))
 		
+		if options.show_pdf: 
+			pdf.show_url()
+
 		if options.download_all: 
 			checking.download_pdf_all(pdf)
 
