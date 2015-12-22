@@ -11,7 +11,7 @@ VERSION 1.0:
   
 UPDATE VERSION 1.0.1: 
 
-  Update options for run: 
+  Update options for run.py: 
   
     "-v": Show the current version of pdf_checker.
     
