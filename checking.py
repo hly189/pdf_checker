@@ -3,12 +3,13 @@
 # Author: Hoa Ly
 # Last Update: 12/22/2015
 # Description: The core file of pdf checker 
-# Update: update download_pdf which use to download a single .pdf file 
+# Update: skip link with error 403 or 404 
 # 
 #############################################################
 import util
 import mechanize 
 import urlparse
+import urllib
 
 """
 This function is used to gather all the available links which are
@@ -59,7 +60,12 @@ def download_pdf_all(link_pdf):
 	current = link_pdf.head 
 	while current: 
 		file_name = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]
-		util.download(current.item, file_name)
+		checking = urllib.urlopen(current.item)
+		if checking.getcode() == 200: 
+			util.download(current.item, file_name)
+		else: 
+			print ("%s:%d error, can't download,") %(current.item, checking.getcode())
+			pass 
 		current = current.get_next()
 
 """
@@ -70,18 +76,25 @@ def download_pdf(link_pdf):
 	current = link_pdf.head
 	i = 0
 	while current: 
-		checking = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]
-		if name_pdf == checking: 
-			util.download(current.item, name_pdf)
-			i = i +1 
+		checking_name = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]
+		check_link = urllib.urlopen(current.item)
+		if name_pdf == checking_name: 
+			if check_link.getcode() == 200:
+				util.download(current.item, name_pdf)
+				i = i +1
+			else: 
+				print "%d error, can't download file" %check_link.getcode()
+				pass
 		current = current.get_next()
 	if i == 0: print "File not found"
-"""
-url = "https://math.berkeley.edu/~murphy/"
+
+url = "http://persson.berkeley.edu/"
 
 urls = util.SList()
 urls.insertFont(url)
 visited = util.SList()
 visited.insertFont(url)
-get_link_info(url, urls, visited)
-"""
+
+pdf = gather_pdf(get_link_info(url, urls, visited))
+#pdf.show_pdf()
+download_pdf(pdf)
