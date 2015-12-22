@@ -9,7 +9,8 @@ The defaul url that I used is "https://math.berkeley.edu/~jcalder/". You can use
 VERSION 1.0: 
   the default mode is to download all the .pdf files which are found. 
   
-UPDATE VERSION 1.0.1: 
+UPDATE 1:  
+VERSION 1.0.1: 
 
   Update options for run.py: 
   
@@ -20,6 +21,9 @@ UPDATE VERSION 1.0.1:
     "-s": allow you to download selected .pdf file. It will ask to see which .pdf file that you want to.
     
     "--show": show all the .pdf files in provided link.
+
+UPDATE 2: 
+VERSION 1.0.1: check to see if the link has 403 and 404 error to download it. 
 
 P/S: I am in the process of fixing the bugs and updating the program. Therefore, it is probably not perfect. 
 
