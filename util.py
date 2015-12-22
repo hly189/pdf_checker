@@ -6,6 +6,7 @@
 # 
 #############################################################
 import urllib2
+import urlparse
 
 
 """
@@ -15,27 +16,6 @@ def check(url):
 	if ".pdf" in url: 
 		return True 
 	return False 
-
-
-"""
-This is used to download .pdf file contains in the link and asking to see
-if you want to download it or not 
-"""
-def download_file(download_url):
-	i = 1
-	while i>0: 
-   		answer = raw_input("Do you want to download the file (y/n): ")
-   		if answer == 'n': 
-   			break  
-   		elif answer == 'y': 
-   			response = urllib2.urlopen(download_url)
-   			a = raw_input("Enter name of your file: ")
-   			file = open(a + '.pdf', 'w')
-   			file.write(response.read())
-   			file.close()
-   			print("Download File Completed")
-   			break 
-   		else: i = i+1 
 
 """
 This function is used to download file
@@ -110,6 +90,13 @@ class SList(object):
 				return True
 			current = current.get_next()
 		return False 
+
+	def show_url(self): 
+		current = self.head
+		while current: 
+			file_name = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]
+			print file_name
+			current = current.get_next()
 
 	def remove(self, key): 
 		current = self.head
