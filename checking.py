@@ -70,7 +70,8 @@ def download_pdf(link_pdf):
 	current = link_pdf.head
 	i = 0
 	while current: 
-		if name_pdf in current.get_item(): 
+		checking = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]
+		if name_pdf == checking: 
 			util.download(current.item, name_pdf)
 			i = i +1 
 		current = current.get_next()
