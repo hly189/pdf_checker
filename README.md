@@ -13,11 +13,13 @@ UPDATE VERSION 1.0.1:
 
   Update options for run: 
   
-    "-v": Show the current version of pdf_checker
+    "-v": Show the current version of pdf_checker.
     
-    "-a": allow you to download all the .pdf files which contain in the provided link
+    "-a": allow you to download all the .pdf files which contain in the provided link.
     
-    "-s": allow you to download selected .pdf file. It will ask to see which .pdf file that you want to download
+    "-s": allow you to download selected .pdf file. It will ask to see which .pdf file that you want to.
+    
+    "--show": show all the .pdf files in provided link.
 
 P/S: I am in the process of fixing the bugs and updating the program. Therefore, it is probably not perfect. 
 
