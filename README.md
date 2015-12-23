@@ -26,7 +26,7 @@ UPDATE 1:
     "-i": shows all the links which cannot be downloaded. 
 
 UPDATE 2:  
-  check to see if the link has 403 and 404 error to download it. 
+  - check to see if the link has 403 and 404 error to download it. 
   
 UPDATE 3: 
   - some minor changes for download functions. 
