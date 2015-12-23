@@ -1,11 +1,11 @@
 #############################################################
 # 
 # Author: Hoa Ly
-# Last Update: 12/21/2015
-# Description: implementation of needed utilities for checking.py
+# Last Update: 12/22/2015
+# Description: Fixed download file 
 # 
 #############################################################
-import urllib2
+import urllib
 import urlparse
 
 
@@ -21,14 +21,21 @@ def check(url):
 This function is used to download file
 """
 def download(download_url, name): 
-	response = urllib2.urlopen(download_url)
-   	file = open(name, 'w')
-   	file.write(response.read())
-   	file.close()
-   	print("Download File Completed") 
+	response = urllib.urlopen(download_url)
+	checking_link = response
+	if checking_link.getcode() == 200: 
+	   	file = open(name, 'w')
+	   	file.write(response.read())
+	   	file.close()
+	   	i = i +1 
+	   	print("Download File Completed") 
+	else: 
+		print ("%s:%d error, can't download,") %(download_url, checking_link.getcode())
+		pass 
+
 
 """
-Below is the implementation of Singly Linked List 
+Implementation of Singly Linked List 
 """
 # Node of the Linked List 
 class SListNode(object):
@@ -91,7 +98,7 @@ class SList(object):
 			current = current.get_next()
 		return False 
 
-	def show_url(self): 
+	def show_pdf(self): 
 		current = self.head
 		while current: 
 			file_name = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]

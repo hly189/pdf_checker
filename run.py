@@ -2,15 +2,14 @@
 # 
 # Author: Hoa Ly
 # Last Update: 12/22/2015
-# Description: updating show .pdf option
+# Update: adding "-i" option which show that can't be downloaded 
 # 
 #############################################################
 import checking
 import util 
-import optparse 
-import sys
+import optparse, sys 
 
-url = "https://math.berkeley.edu/~jcalder/"
+url = "http://persson.berkeley.edu/"
 
 def get_options():
 	parser = optparse.OptionParser()
@@ -27,6 +26,11 @@ def get_options():
 	parser.add_option('--show',
 					  action="store_true",
 	                  dest="show_pdf",
+	                  default=False
+	                  )
+	parser.add_option('-i', '--invalid',
+					  action="store_true",
+	                  dest="invalid_link",
 	                  default=False
 	                  )
 	parser.add_option('--version',
@@ -58,8 +62,11 @@ def main():
 	else: 
 		pdf = checking.gather_pdf(checking.get_link_info(url, urls, visited))
 		
+		if options.invalid_link: 
+			a = checking.invalid(pdf)
+			a.show()
 		if options.show_pdf: 
-			pdf.show_url()
+			pdf.show_pdf()
 
 		if options.download_all: 
 			checking.download_pdf_all(pdf)
@@ -69,7 +76,7 @@ def main():
 			while i >= 0: 
 				answer = raw_input("Do you want to show the name of files: (y/n): ")
 				if answer == "y": 
-					pdf.show_url()
+					pdf.show_pdf()
 					checking.download_pdf(pdf)
 					break
 				elif answer == "n": 

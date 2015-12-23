@@ -3,8 +3,8 @@
 # Author: Hoa Ly
 # Last Update: 12/22/2015
 # Description: The core file of pdf checker 
-# Update: skip link with error 403 or 404 
-# 
+# Update: implemented invalid() function to collected undownloadable
+# and fix download_pdf_all and download_pdf functions 
 #############################################################
 import util
 import mechanize 
@@ -60,12 +60,7 @@ def download_pdf_all(link_pdf):
 	current = link_pdf.head 
 	while current: 
 		file_name = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]
-		checking = urllib.urlopen(current.item)
-		if checking.getcode() == 200: 
-			util.download(current.item, file_name)
-		else: 
-			print ("%s:%d error, can't download,") %(current.item, checking.getcode())
-			pass 
+		util.download(current.item, file_name)
 		current = current.get_next()
 
 """
@@ -77,16 +72,26 @@ def download_pdf(link_pdf):
 	i = 0
 	while current: 
 		checking_name = urlparse.urlparse(current.item).path.rsplit("/", 1)[-1]
-		check_link = urllib.urlopen(current.item)
 		if name_pdf == checking_name: 
-			if check_link.getcode() == 200:
-				util.download(current.item, name_pdf)
-				i = i +1
-			else: 
-				print "%d error, can't download file" %check_link.getcode()
-				pass
+			util.download(current.item, name_pdf)
+			i = i +1 
 		current = current.get_next()
 	if i == 0: print "File not found"
+
+def invalid(link_pdf): 
+	current = link_pdf.head 
+	invalid = util.SList()
+	while current: 
+		checking = urllib.urlopen(current.item)
+		if checking.getcode() == 404 or checking.getcode() == 403: 
+			if invalid.get_length()== 0: 
+				invalid.insertFont(current.item)
+			invalid.insertEnd(current.item)
+		current = current.get_next()
+	if invalid.get_length() == 0: 
+		print ("All file is downloadable")
+	return invalid
+
 """
 url = "http://persson.berkeley.edu/"
 
@@ -96,6 +101,9 @@ visited = util.SList()
 visited.insertFont(url)
 
 pdf = gather_pdf(get_link_info(url, urls, visited))
+a = invalid(pdf)
+
 #pdf.show_pdf()
-download_pdf(pdf)
+#download_pdf(pdf)
+
 """
