@@ -4,7 +4,7 @@ This program will search all the links which contain the .pdf files in the provi
 
 You should run "run.py" file to start the program
 
-The defaul url that I used is "https://math.berkeley.edu/~jcalder/". You can use another one that you like 
+The defaul url that I used is "http://persson.berkeley.edu/". You can use another one that you like 
 
 VERSION 1.0: 
   the default mode is to download all the .pdf files which are found. 
