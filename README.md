@@ -12,13 +12,13 @@ VERSION 1.0:
   
 VERSION 1.0.1: 
 
-  Update options for run.py: (22/12/2015)
+  Update options for run.py: (24/12/2015)
   
     "-v": Shows the current version of pdf_checker.
     
     "-a": allows you to download all the .pdf files which contain in the provided link.
     
-    "-s": allows you to download selected .pdf file. It will ask to see which .pdf file that you want to.
+    "-z": allows you to download selected .pdf file. It will ask to see which .pdf file that you want to.
     
     "-i": shows all the links which cannot be downloaded.
     
