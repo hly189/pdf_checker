@@ -28,7 +28,7 @@ def get_link_info(given_url, given_urls, given_visited):
 				if given_url in new_url and given_visited.search(new_url) is False: 
 						given_visited.insertEnd(new_url)
 						given_urls.insertEnd(new_url) 
-						print(new_url)
+					#	print(new_url)
 		except: 
 			if given_urls.size != 0:
 				given_urls.remove(given_urls.head.get_item())
