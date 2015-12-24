@@ -29,7 +29,7 @@ UPDATE 1:
   
 UPDATE 2: 
   - some minor changes for download functions. 
-  - updaing "-i" option which shows the links which cannot be downloaded. 
+  - updaing "-i" option which shows the links that cannot be downloaded. 
 
 UPDATE 3: 
    - Adding input for url and fixing some bugs. 
