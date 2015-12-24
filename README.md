@@ -22,9 +22,11 @@ UPDATE 1:
     
     "-s": allows you to download selected .pdf file. It will ask to see which .pdf file that you want to.
     
+    "-i": shows all the links which cannot be downloaded.
+    
     "--show": shows all the .pdf files in provided link.
     
-    "-i": shows all the links which cannot be downloaded. 
+     
 
 UPDATE 2:  
   - check to see if the link has 403 and 404 error to download it. 
@@ -32,6 +34,9 @@ UPDATE 2:
 UPDATE 3: 
   - some minor changes for download functions. 
   - updaing "-i" option which shows the links which cannot be downloaded. 
+
+UPDATE 4: 
+   - Adding input for url and fixing some bugs. 
 
 P/S: I am in the process of fixing the bugs and updating the program. Therefore, it is probably not perfect. 
 
