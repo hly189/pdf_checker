@@ -12,8 +12,6 @@ VERSION 1.0:
   
 VERSION 1.0.1: 
 
-UPDATE 1: 
-
   Update options for run.py: (22/12/2015)
   
     "-v": Shows the current version of pdf_checker.
@@ -26,16 +24,14 @@ UPDATE 1:
     
     "--show": shows all the .pdf files in provided link.
     
-     
-
-UPDATE 2:  
+UPDATE 1:  
   - check to see if the link has 403 and 404 error to download it. 
   
-UPDATE 3: 
+UPDATE 2: 
   - some minor changes for download functions. 
   - updaing "-i" option which shows the links which cannot be downloaded. 
 
-UPDATE 4: 
+UPDATE 3: 
    - Adding input for url and fixing some bugs. 
 
 P/S: I am in the process of fixing the bugs and updating the program. Therefore, it is probably not perfect. 
