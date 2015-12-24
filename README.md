@@ -1,10 +1,11 @@
 PDF CHECKER:
+===================
 
-This program will search all the links which contain the .pdf files in the provided url and download all or a selected file for you. 
+This tool will search all the links which contain the .pdf files in the provided url and download all or a selected file for you. 
 
-You should run "run.py" file to start the program
+Usage: 
 
-The defaul url that I used is "http://persson.berkeley.edu/". You can use another one that you like 
+ - run command: python run.py [options]
 
 VERSION 1.0: 
   the default mode is to download all the .pdf files which are found. 
