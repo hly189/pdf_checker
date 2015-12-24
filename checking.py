@@ -32,7 +32,7 @@ def get_link_info(given_url, given_urls, given_visited):
 		except: 
 			if given_urls.size != 0:
 				given_urls.remove(given_urls.head.get_item())
-				print "error"
+				#print "error"
 
 	print ("Comleted")
 	return given_visited
@@ -92,7 +92,7 @@ def invalid(link_pdf):
 		print ("All file is downloadable")
 	return invalid
 
-
+"""
 url = "https://math.berkeley.edu/~tataru/"
 
 urls = util.SList()
@@ -105,4 +105,4 @@ pdf = gather_pdf(get_link_info(url, urls, visited))
 
 #pdf.show_pdf()
 #download_pdf(pdf)
-
+"""

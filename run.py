@@ -9,7 +9,7 @@ import checking
 import util 
 import optparse, sys 
 
-url = "http://persson.berkeley.edu/"
+url = raw_input("Input your link (include http:// or https:// )")
 
 def get_options():
 	parser = optparse.OptionParser()
@@ -34,7 +34,7 @@ def get_options():
 	                  help = "show all the file which cannot be downloaded",
 	                  )
 
-	parser.add_option('--show',
+	parser.add_option('-z', "--show",
 					  action="store_true",
 	                  dest="show_pdf",
 	                  default=False,
@@ -67,7 +67,7 @@ def main():
 	visited.insertFont(url)
 
 
-	if len(args) <= 0:  
+	if len(args) < 0:  
 		parser.print_help()
 		print("Please enter which options do you want to choose")
 

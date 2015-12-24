@@ -21,13 +21,13 @@ def check(url):
 This function is used to download file
 """
 def download(download_url, name): 
+
 	response = urllib.urlopen(download_url)
 	checking_link = response
 	if checking_link.getcode() == 200: 
 	   	file = open(name, 'w')
 	   	file.write(response.read())
 	   	file.close()
-	   	i = i +1 
 	   	print("Download File Completed") 
 	else: 
 		print ("%s:%d error, can't download,") %(download_url, checking_link.getcode())
