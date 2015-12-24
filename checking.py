@@ -3,8 +3,7 @@
 # Author: Hoa Ly
 # Last Update: 12/22/2015
 # Description: The core file of pdf checker 
-# Update: implemented invalid() function to collected undownloadable
-# and fix download_pdf_all and download_pdf functions 
+# Update: did some change to make it more stable 
 #############################################################
 import util
 import mechanize 
@@ -29,10 +28,11 @@ def get_link_info(given_url, given_urls, given_visited):
 				if given_url in new_url and given_visited.search(new_url) is False: 
 						given_visited.insertEnd(new_url)
 						given_urls.insertEnd(new_url) 
-						#print(new_url)
+						print(new_url)
 		except: 
-
-			given_urls.remove(given_urls.head.get_item())
+			if given_urls.size != 0:
+				given_urls.remove(given_urls.head.get_item())
+				print "error"
 
 	print ("Comleted")
 	return given_visited
@@ -92,8 +92,8 @@ def invalid(link_pdf):
 		print ("All file is downloadable")
 	return invalid
 
-"""
-url = "http://persson.berkeley.edu/"
+
+url = "https://math.berkeley.edu/~tataru/"
 
 urls = util.SList()
 urls.insertFont(url)
@@ -101,9 +101,8 @@ visited = util.SList()
 visited.insertFont(url)
 
 pdf = gather_pdf(get_link_info(url, urls, visited))
-a = invalid(pdf)
+#pa = invalid(pdf)
 
 #pdf.show_pdf()
 #download_pdf(pdf)
 
-"""
