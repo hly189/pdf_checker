@@ -9,7 +9,7 @@ import checking
 import util 
 import optparse, sys 
 
-url = raw_input("Input your link (include http:// or https:// )")
+
 
 def get_options():
 	parser = optparse.OptionParser()
@@ -61,15 +61,12 @@ def main():
 	parser = get_options()
 	options, args = parser.parse_args()
 
+	url = raw_input("input your url (please include http:// or https://): ")
+
 	urls = util.SList()
 	urls.insertFont(url)
 	visited = util.SList()
 	visited.insertFont(url)
-
-
-	if len(args) < 0:  
-		parser.print_help()
-		print("Please enter which options do you want to choose")
 
 	if options.verbose: 
 		print 'VERSION   :', options.version
