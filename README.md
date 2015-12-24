@@ -1,6 +1,6 @@
 PDF CHECKER:
 
-This program will search all the links which contain the .pdf files in the provided url and download all of them for you. 
+This program will search all the links which contain the .pdf files in the provided url and download all or a selected file for you. 
 
 You should run "run.py" file to start the program
 
