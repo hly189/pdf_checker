@@ -2,7 +2,7 @@
 # 
 # Author: Hoa Ly
 # Last Update: 12/22/2015
-# Update: adding "-i" option which show that can't be downloaded 
+# Description: adding if no option is choses, it will print help  
 # 
 #############################################################
 import checking
@@ -17,27 +17,37 @@ def get_options():
 						action="store_true",
                   		dest="download_single", 
                   		default=False,
+                  		help = "download a single file",
                   			)
+
 	parser.add_option('-a', '--all',
 					  action="store_true",
 	                  dest="download_all",
-	                  default=False
+	                  default=False,
+	                  help = "download all the file ",
 	                  )
-	parser.add_option('--show',
-					  action="store_true",
-	                  dest="show_pdf",
-	                  default=False
-	                  )
+
 	parser.add_option('-i', '--invalid',
 					  action="store_true",
 	                  dest="invalid_link",
-	                  default=False
+	                  default=False,
+	                  help = "show all the file which cannot be downloaded",
 	                  )
+
+	parser.add_option('--show',
+					  action="store_true",
+	                  dest="show_pdf",
+	                  default=False,
+	                  help = "show all the .pdf links in provided link",
+	                  )                  
+
 	parser.add_option('--version',
 	                  dest="version",
 	                  default="1.0.1",
 	                  type="string",
+	                  help = "the most current version",
 	                  ) 
+
 	parser.add_option('-v', '--verbose',
                   dest="verbose",
                   default=False,
@@ -57,8 +67,13 @@ def main():
 	visited.insertFont(url)
 
 
+	if len(args) <= 0:  
+		parser.print_help()
+		print("Please enter which options do you want to choose")
+
 	if options.verbose: 
 		print 'VERSION   :', options.version
+		
 	else: 
 		pdf = checking.gather_pdf(checking.get_link_info(url, urls, visited))
 		
