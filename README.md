@@ -3,6 +3,15 @@ PDF CHECKER:
 
 This tool will search all the links which contain the .pdf files in the provided url and download all or a selected file for you. 
 
+## REQUIREMENT: 
+Please set up mechanize in order to run this tool. If you did not set it up yet, please run: 
+
+`pip install mechanize `
+
+or download the mechanize [distribution](http://wwwsearch.sourceforge.net/mechanize/src/), 
+
+then run `python setup.py install`
+
 Usage: 
 
  - run command: python run.py [options]
