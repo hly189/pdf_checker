@@ -12,14 +12,14 @@ or download the mechanize [distribution](http://wwwsearch.sourceforge.net/mechan
 
 then run `python setup.py install`
 
-Usage: 
+## Usage: 
 
  - run command: python run.py [options]
 
-VERSION 1.0: 
+### VERSION 1.0: 
   the default mode is to download all the .pdf files which are found. 
   
-VERSION 1.0.1: 
+### VERSION 1.0.1: 
 
   Update options for run.py: (24/12/2015)
   
@@ -33,14 +33,14 @@ VERSION 1.0.1:
     
     "-z": shows all the .pdf files in provided link.
     
-UPDATE 1:  
+### UPDATE 1:  
   - check to see if the link has 403 and 404 error to download it. 
   
-UPDATE 2: 
+### UPDATE 2: 
   - some minor changes for download functions. 
   - updaing "-i" option which shows the links that cannot be downloaded. 
 
-UPDATE 3: 
+### UPDATE 3: 
    - Adding input for url and fixing some bugs. 
 
 P/S: I am in the process of fixing the bugs and updating the program. Therefore, it is probably not perfect. 
